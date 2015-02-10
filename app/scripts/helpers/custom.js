@@ -159,6 +159,10 @@ define([
         return str.replace(from, to);
     });
 
+    Handlebars.registerHelper('link_format', function (forum_object, forum_id, linkType ) {
+        return forum_object[forum_id][linkType];
+    });
+
     Handlebars.registerHelper('times', function(n, block) {
         var accum = '';
         for(var i = 0; i < n; ++i)
