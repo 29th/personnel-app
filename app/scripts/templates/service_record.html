@@ -38,12 +38,6 @@
                 </div>
                 <div class="pull-right">    
                     Rank changed to {{ this.new_rank.name }} 
-                    {{#is this.forum_id "===" "3"}}
-                      <a href="{{ ../../../../../forumUrl }}/discussion/{{ this.topic_id }}">&nbsp;<span class="fa fa-comment"></span></a>
-                    {{/is}}
-                    {{#is this.forum_id "===" "2"}}
-                      <a href="{{ ../../../../../OldForumUrl }}/?topic={{ this.topic_id }}">&nbsp;<span class="fa fa-comment"></span></a>
-                    {{/is}}
                 </div>
             </div>
         </div>
@@ -55,12 +49,6 @@
                 </div>
                 <div class="pull-right">
                     Awarded {{ this.award.name }}
-                    {{#is this.forum_id "===" "3"}}
-                      <a href="{{ ../../../../../../forumUrl }}/discussion/{{ this.topic_id }}">&nbsp;<span class="fa fa-comment"></span></a>
-                    {{/is}}
-                    {{#is this.forum_id "===" "2"}}
-                      <a href="{{ ../../../../../../OldForumUrl }}/?topic={{ this.topic_id }}">&nbsp;<span class="fa fa-comment"></span></a>
-                    {{/is}}
                 </div>
             </div>
         </div>
@@ -91,12 +79,6 @@
                 <div class="pull-left"><i class="fa fa-money"></i></div>
                 <div class="pull-right">
                     Donated ${{ decimals this.amount_received }}
-                    {{#is this.forum_id "===" "3"}}
-                      <a href="{{ ../../../../../../../../forumUrl }}/discussion/{{ this.topic_id }}">&nbsp;<span class="fa fa-comment"></span></a>
-                    {{/is}}
-                    {{#is this.forum_id "===" "2"}}
-                      <a href="{{ ../../../../../../../../OldForumUrl }}/?topic={{ this.topic_id }}">&nbsp;<span class="fa fa-comment"></span></a>
-                    {{/is}}
                 </div>
             </div>
         </div>
