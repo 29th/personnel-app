@@ -13,7 +13,7 @@
                     <a href="#members/{{this.member.id}}">{{this.member.short_name}}</a>'s rank was changed to {{this.new_rank.name}}
                     {{#and this.forum_id this.topic_id}}
                         {{#is this.forum_id "===" "3"}}
-                        <a href="{{ ../../../../../forumUrl }}/discussion/{{ this.topic_id }}"><span class="fa fa-comment"></span></a>
+                        <a href="{{ ../../../../../forum.Vanilla.baseUrl }}{{ sprintf ../../../../../forum.Vanilla.topicPath this.topic_id }}"><span class="fa fa-comment"></span></a>
                         {{/is}}
                         {{#is this.forum_id "===" "2"}}
                         <a href="{{ ../../../../../OldForumUrl }}/?topic={{ this.topic_id }}"><span class="fa fa-comment"></span></a>
@@ -28,11 +28,8 @@
                 <li>
                     <a href="#members/{{this.member.id}}">{{this.member.short_name}}</a> was awarded the {{this.award.name}}
                     {{#and this.forum_id this.topic_id}}
-                        {{#is this.forum_id "===" "3"}}
-                        <a href="{{ ../../../../../forumUrl }}/discussion/{{ this.topic_id }}"><span class="fa fa-comment"></span></a>
-                        {{/is}}
-                        {{#is this.forum_id "===" "2"}}
-                        <a href="{{ ../../../../../OldForumUrl }}/?topic={{ this.topic_id }}"><span class="fa fa-comment"></span></a>
+                        {{#is this.forum_id "!==" "null"}}
+                        <a href="{{ ../../../../../forum.[this.forum_id].baseUrl }}{{ sprintf ../../../../../forum.Vanilla.topicPath this.topic_id }}"><span class="fa fa-comment"></span></a>
                         {{/is}}
                     {{/and}}
                 </li>
@@ -45,7 +42,7 @@
                     <a href="#members/{{this.member.id}}">{{this.member.short_name}}</a> donated ${{this.amount_received}}
                     {{#and this.forum_id this.topic_id}}
                         {{#is this.forum_id "===" "3"}}
-                        <a href="{{ ../../../../../forumUrl }}/discussion/{{ this.topic_id }}"><span class="fa fa-comment"></span></a>
+                        <a href="{{ ../../../../../forum.Vanilla.baseUrl }}{{ sprintf ../../../../../forum.Vanilla.topicPath this.topic_id }}"><span class="fa fa-comment"></span></a>
                         {{/is}}
                         {{#is this.forum_id "===" "2"}}
                         <a href="{{ ../../../../../OldForumUrl }}/?topic={{ this.topic_id }}"><span class="fa fa-comment"></span></a>
@@ -61,7 +58,7 @@
                     <a href="#members/{{this.member.id}}">{{this.member.short_name}}</a> posted an <a href="#eloas">Extended LOA</a>
                     {{#and this.forum_id this.topic_id}}
                         {{#is this.forum_id "===" "3"}}
-                        <a href="{{ ../../../../../forumUrl }}/discussion/{{ this.topic_id }}"><span class="fa fa-comment"></span></a>
+                        <a href="{{ ../../../../../forum.Vanilla.baseUrl }}{{ sprintf ../../../../../forum.Vanilla.topicPath this.topic_id }}"><span class="fa fa-comment"></span></a>
                         {{/is}}
                         {{#is this.forum_id "===" "2"}}
                         <a href="{{ ../../../../../OldForumUrl }}/?topic={{ this.topic_id }}"><span class="fa fa-comment"></span></a>
@@ -81,7 +78,7 @@
                      Discharged</a>
                     {{#and this.forum_id this.topic_id}}
                         {{#is this.forum_id "===" "3"}}
-                        <a href="{{ ../../../../../forumUrl }}/discussion/{{ this.topic_id }}"><span class="fa fa-comment"></span></a>
+                        <a href="{{ ../../../../../forum.Vanilla.baseUrl }}{{ sprintf ../../../../../forum.Vanilla.topicPath this.topic_id }}"><span class="fa fa-comment"></span></a>
                         {{/is}}
                         {{#is this.forum_id "===" "2"}}
                         <a href="{{ ../../../../../OldForumUrl }}/?topic={{ this.topic_id }}"><span class="fa fa-comment"></span></a>
@@ -97,7 +94,7 @@
                     <a href="#members/{{this.member.id}}">{{this.member.short_name}}</a> received a <a href="#demerits/{{this.id}}">demerit</a>
                     {{#and this.forum_id this.topic_id}}
                         {{#is this.forum_id "===" "3"}}
-                        <a href="{{ ../../../../../forumUrl }}/discussion/{{ this.topic_id }}"><span class="fa fa-comment"></span></a>
+                        <a href="{{ ../../../../../forum.Vanilla.baseUrl }}{{ sprintf ../../../../../forum.Vanilla.topicPath this.topic_id }}"><span class="fa fa-comment"></span></a>
                         {{/is}}
                         {{#is this.forum_id "===" "2"}}
                         <a href="{{ ../../../../../OldForumUrl }}/?topic={{ this.topic_id }}"><span class="fa fa-comment"></span></a>
