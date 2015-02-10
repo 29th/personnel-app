@@ -56,7 +56,8 @@ define([
                 items: items,
                 duration: this.assignments.duration,
                 coatDir: config.coatDir,
-                allowedTo: allowedTo
+                allowedTo: allowedTo,
+                forumUrl: config.forumUrl
             }, this.model.toJSON());
         }
     });
