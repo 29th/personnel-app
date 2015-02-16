@@ -5,23 +5,22 @@ define(function () {
         coatDir: "http://new.29th.org/coats",
         forum: {
         	"Vanilla": {
-        		"baseUrl": "/forums",
+        		"baseUrl": "http://forums.29th.org",
         		"signInPath": "/entry/signin",
         		"profilePath": "/profile/%s/%s",
         		"topicPath": "/discussion/%s",
         		"privateMessagePath": "/messages/add"
 			    },
-        	"SMF": {
-        		"baseUrl": "http://29th.org",
-        		"profilePath": "/personnel/file/?u=%s/%s",
-        		"topicPath": "/forums/?topic=%s"
-			    },  
+          "SMF": {
+                "baseUrl": "http://29th.org/forums",
+                "topicPath": "/?topic=%s.0"
+          },  
         	"PHPBB": {
         		"baseUrl": "",
         		"profilePath": "%s",
         		"topicPath": "%s"
 			    }
-        },
+       },
         wikiUrl: "http://29th.org/wiki",
         vanillaCategoryEnlistments: 62
     };

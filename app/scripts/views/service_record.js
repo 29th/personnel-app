@@ -38,7 +38,8 @@ define([
                     beforeDischarge: dischargeDate && moment(date).isBefore(dischargeDate),
                     items: dateItems
                 });
-            }); 
+            });
+            
             // Sort descending by date
             items.sort(function (a, b) {
                 if (a.date < b.date) return 1;

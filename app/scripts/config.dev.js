@@ -12,10 +12,9 @@ define(function () {
         		"privateMessagePath": "/messages/add"
 			    },
         	"SMF": {
-        		"baseUrl": "http://29th.org",
-        		"profilePath": "/personnel/file/?u=%s/%s",
-        		"topicPath": "/forums/?topic=%s"
-			    },  
+                "baseUrl": "http://29th.org/forums",
+                "topicPath": "/?topic=%s.0"
+          },  
         	"PHPBB": {
         		"baseUrl": "",
         		"profilePath": "%s",
