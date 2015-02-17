@@ -692,8 +692,16 @@ MemberEditView, MemberProfileView, MemberQualificationsView, MemberView, NavView
             // Profile
             else {
                 memberLayout.setHighlight("profile");
+
+                // Finances
+                var finances = new Finances(null, {
+                    member_id: id
+                });
+                promises.push(finances.fetch());
+
                 pageView = new MemberProfileView({
-                    model: member
+                    model: member,
+                    finances: finances
                 });
             }
 
