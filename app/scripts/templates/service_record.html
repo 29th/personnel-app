@@ -40,7 +40,7 @@
                     Rank changed to {{ this.new_rank.name }}
                     {{#and this.forum_id this.topic_id}}
                       {{#is this.forum_id "!==" "null"}}
-                        <a href="{{ link_format ../../../../../../forum this.forum_id "baseUrl" }}{{ sprintf ../../../../../../forum.Vanilla.topicPath this.topic_id}}"><span class="fa fa-comment"></span></a>
+                        <a href="{{ link_format ../../../../../../forum this.forum_id "baseUrl" }}{{link_format ../../../../../../forum this.forum_id "topicPath" this.topic_id}}"><span class="fa fa-comment"></span></a>
                       {{/is}}
                     {{/and}}
                 </div>
@@ -56,7 +56,7 @@
                     Awarded {{ this.award.name }}
                     {{#and this.forum_id this.topic_id}}
                         {{#is this.forum_id "!==" "null"}}
-                        <a href="{{ link_format ../../../../../../../forum this.forum_id "baseUrl" }}{{ sprintf ../../../../../../../forum.Vanilla.topicPath this.topic_id}}"><span class="fa fa-comment"></span></a>
+                        <a href="{{ link_format ../../../../../../../forum this.forum_id "baseUrl" }}{{ link_format ../../../../../../../forum this.forum_id "topicPath" this.topic_id}}"><span class="fa fa-comment"></span></a>
                         {{/is}}
                     {{/and}}
                 </div>
@@ -92,7 +92,7 @@
                     Awarded {{ this.award.name }}
                     {{#and this.forum_id this.topic_id}}
                         {{#is this.forum_id "!==" "null"}}
-                        <a href="{{ ../../../../../../../../../../forum.Vanilla.baseUrl }}{{ sprintf ../../../../../../../../../../forum.Vanilla.topicPath this.topic_id}}"><span class="fa fa-comment"></span></a>
+                        <a href="{{ link_format ../../../../../../../../../../forum this.forum_id "baseUrl" }}{{ link_format ../../../../../../../../../../forum this.forum_id "topicPath" this.topic_id}}"><span class="fa fa-comment"></span></a>
                         {{/is}}
                     {{/and}}
                 </div>
