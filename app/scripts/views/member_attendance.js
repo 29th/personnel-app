@@ -59,30 +59,36 @@ define([
             this.$(".more").toggle(this.collection.more);
         },
         serializeData: function () {
-            var percentages = {};
+            var percentages = [[0,0],[0,0],[0,0]];
+            var perc30, perc60, perc90;
             var mod = this.collection.models;
             var d30 = new Date(); 
             var d60 = new Date(); 
             var d90 = new Date();
             d30.setDate(d30.getDate()-30).format;
-            d30 := d30.('Y-m-d ')
+            d30 = d30.getTime();
             d60.setDate(d60.getDate()-60);
+            d60 = d60.getTime();
             d90.setDate(d90.getDate()-90);
-//            alert(d30.toJSON());
-//            alert(d60.toJSON());
-//            alert(d90.toJSON());
-//            alert(mod[0].attributes.event.datetime);
-//            for(j=0;j<mod.length;j++){
-            for(j=0;j<10;j++){
-              if( Date(mod[j].attributes.event.datetime) > d30 )
+            d90 = d90.getTime();
+            var att_date;
+            for(j=0;j<mod.length;j++)
+            {
+              if ( mod[j].attributes.event.mandatory )
               {
-                alert('OK: ' + mod[j].attributes.event.datetime + ' : ' + d30);
+                att_date = Date.parse( mod[j].attributes.event.datetime );
+                if( att_date > d30 ) {percentages[0][0]+=mod[j].attributes.attended;percentages[0][1]+=1; };
+                if( att_date > d60 ) {percentages[1][0]+=mod[j].attributes.attended;percentages[1][1]+=1; };
+                if( att_date > d90 ) {percentages[2][0]+=mod[j].attributes.attended;percentages[2][1]+=1; };
               }
-              else
-                alert('BAD: ' + mod[j].attributes.event.datetime + ' : ' + d30);
             }
+            if ( percentages[0][1] ) perc30 = (percentages[0][0]/percentages[0][1])*100; else perc30 = "100";
+            if ( percentages[1][1] ) perc60 = (percentages[1][0]/percentages[1][1])*100; else perc60 = "100";
+            if ( percentages[2][1] ) perc90 = (percentages[2][0]/percentages[2][1])*100; else perc90 = "100";
             return _.extend({
-              perc30: "abcd"
+              perc30: parseInt(perc30),
+              perc60: parseInt(perc60),
+              perc90: parseInt(perc90)
             });
         }
     });
