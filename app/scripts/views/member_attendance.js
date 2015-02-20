@@ -57,6 +57,33 @@ define([
         },
         checkMoreButton: function () {
             this.$(".more").toggle(this.collection.more);
+        },
+        serializeData: function () {
+            var percentages = {};
+            var mod = this.collection.models;
+            var d30 = new Date(); 
+            var d60 = new Date(); 
+            var d90 = new Date();
+            d30.setDate(d30.getDate()-30).format;
+            d30 := d30.('Y-m-d ')
+            d60.setDate(d60.getDate()-60);
+            d90.setDate(d90.getDate()-90);
+//            alert(d30.toJSON());
+//            alert(d60.toJSON());
+//            alert(d90.toJSON());
+//            alert(mod[0].attributes.event.datetime);
+//            for(j=0;j<mod.length;j++){
+            for(j=0;j<10;j++){
+              if( Date(mod[j].attributes.event.datetime) > d30 )
+              {
+                alert('OK: ' + mod[j].attributes.event.datetime + ' : ' + d30);
+              }
+              else
+                alert('BAD: ' + mod[j].attributes.event.datetime + ' : ' + d30);
+            }
+            return _.extend({
+              perc30: "abcd"
+            });
         }
     });
 });
