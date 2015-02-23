@@ -144,3 +144,10 @@ body {
     border-top: 1px #333 dashed;
     margin-top: 10px;
 }
+
+/* Attendance percentages */
+.attendance-percentages {
+    width: 150px;
+    margin-left:150px;
+    border: 3px dashed darkgreen; 
+}

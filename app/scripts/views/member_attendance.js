@@ -59,8 +59,8 @@ define([
             this.$(".more").toggle(this.collection.more);
         },
         serializeData: function () {
-            var percentages = [[0,0],[0,0],[0,0]];
-            var perc30, perc60, perc90;
+            var percentages = [[0,0],[0,0],[0,0],[0,0]];
+            var perc30, perc60, perc90, percAll;
             var mod = this.collection.models;
             var d30 = new Date(); 
             var d60 = new Date(); 
@@ -80,15 +80,18 @@ define([
                 if( att_date > d30 ) {percentages[0][0]+=mod[j].attributes.attended;percentages[0][1]+=1; };
                 if( att_date > d60 ) {percentages[1][0]+=mod[j].attributes.attended;percentages[1][1]+=1; };
                 if( att_date > d90 ) {percentages[2][0]+=mod[j].attributes.attended;percentages[2][1]+=1; };
+                percentages[3][0]+=mod[j].attributes.attended;percentages[3][1]+=1;
               }
             }
             if ( percentages[0][1] ) perc30 = (percentages[0][0]/percentages[0][1])*100; else perc30 = "100";
             if ( percentages[1][1] ) perc60 = (percentages[1][0]/percentages[1][1])*100; else perc60 = "100";
             if ( percentages[2][1] ) perc90 = (percentages[2][0]/percentages[2][1])*100; else perc90 = "100";
+            if ( percentages[3][1] ) percAll = (percentages[3][0]/percentages[3][1])*100; else percAll = "100";
             return _.extend({
               perc30: parseInt(perc30),
               perc60: parseInt(perc60),
-              perc90: parseInt(perc90)
+              perc90: parseInt(perc90),
+              percAll: parseInt(percAll)
             });
         }
     });
