@@ -86,6 +86,17 @@
             {{/each}}
         {{/if}}
         
+        {{#if this.qualifications}}
+            {{#each this.qualifications}}
+                <li>
+                    <a href="#members/{{this.member.id}}">{{this.member.short_name}}</a> had their AIT Progress updated by <a href="#members/{{this.author.id}}">{{this.author.short_name}}</a>
+                    {{#if this.topic_url}}
+                        <a href="{{ this.topic_url  }}"><span class="fa fa-comment"></span></a>
+                    {{/if}}
+                </li>
+            {{/each}}
+        {{/if}}
+        
     	</ul>
     	{{/each}}
     </div>

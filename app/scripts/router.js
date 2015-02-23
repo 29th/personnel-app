@@ -838,6 +838,14 @@ MemberEditView, MemberProfileView, MemberQualificationsView, MemberView, NavView
                 });
                 promises.push(discharges.fetch());
 
+                // Qualifications
+                var qualifications = new Qualifications(null, {
+                    unit_id: filter || "Bn",
+                    from: "30 days ago",
+                    to: "today"
+                });
+                promises.push(qualifications.fetch());
+
                 // Attendance
                 var attendance = new Attendance(null, {
                     unit_id: filter || "Bn",
@@ -855,6 +863,7 @@ MemberEditView, MemberProfileView, MemberQualificationsView, MemberView, NavView
                     demerits: demerits,
                     eloas: eloas,
                     discharges: discharges,
+                    qualifications: qualifications,
                     attendance: attendance
                 }));
             }
