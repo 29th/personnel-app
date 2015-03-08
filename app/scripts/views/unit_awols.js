@@ -23,6 +23,7 @@ define([
             this.collection.setFilter("days", days).fetch({reset: true}); // TODO: Add error handling, loading indicator?
         },
         serializeData: function() {
+            alert(this.collection.models);
             return {days: this.collection.days, items: this.collection.toJSON()};
         }
     });
