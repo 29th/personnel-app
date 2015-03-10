@@ -10,12 +10,17 @@ define(function () {
         		"profilePath": "/profile/%s/%s",
         		"topicPath": "/discussion/%s",
         		"privateMessagePath": "/messages/add"
-			},
-            "SMF": {
+			    },
+          "SMF": {
                 "baseUrl": "http://29th.org/forums",
                 "topicPath": "/?topic=%s.0"
-            }
-        },
+          },  
+        	"PHPBB": {
+        		"baseUrl": "",
+        		"profilePath": "%s",
+        		"topicPath": "%s"
+			    }
+       },
         wikiUrl: "http://29th.org/wiki",
         vanillaCategoryEnlistments: 62
     };

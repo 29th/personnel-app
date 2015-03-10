@@ -38,6 +38,11 @@
                 </div>
                 <div class="pull-right">    
                     Rank changed to {{ this.new_rank.name }}
+                    {{#and this.forum_id this.topic_id}}
+                      {{#is this.forum_id "!==" "null"}}
+                        <a href="{{ link_format ../../../../../../forum this.forum_id "baseUrl" }}{{link_format ../../../../../../forum this.forum_id "topicPath" this.topic_id}}"><span class="fa fa-comment"></span></a>
+                      {{/is}}
+                    {{/and}}
                 </div>
             </div>
         </div>
@@ -48,7 +53,12 @@
                     <img src="images/awards/{{#award_img_name this.award.abbr}}{{/award_img_name}}.gif" title="{{ this.award.name }}">
                 </div>
                 <div class="pull-right">
-                Awarded {{ this.award.name }}
+                    Awarded {{ this.award.name }}
+                    {{#and this.forum_id this.topic_id}}
+                        {{#is this.forum_id "!==" "null"}}
+                        <a href="{{ link_format ../../../../../../../forum this.forum_id "baseUrl" }}{{ link_format ../../../../../../../forum this.forum_id "topicPath" this.topic_id}}"><span class="fa fa-comment"></span></a>
+                        {{/is}}
+                    {{/and}}
                 </div>
             </div>
         </div>
@@ -79,6 +89,12 @@
                 <div class="pull-left"><i class="fa fa-money"></i></div>
                 <div class="pull-right">
                     Donated ${{ decimals this.amount_received }}
+                    Awarded {{ this.award.name }}
+                    {{#and this.forum_id this.topic_id}}
+                        {{#is this.forum_id "!==" "null"}}
+                        <a href="{{ link_format ../../../../../../../../../../forum this.forum_id "baseUrl" }}{{ link_format ../../../../../../../../../../forum this.forum_id "topicPath" this.topic_id}}"><span class="fa fa-comment"></span></a>
+                        {{/is}}
+                    {{/and}}
                 </div>
             </div>
         </div>
