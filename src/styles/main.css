@@ -378,6 +378,7 @@ table.notes_table {
 .notes_table .notes_content {
     background-color:#BBCEAF;
     padding: 5px;
+    color: #000;
 }
 
 .quote_author {
