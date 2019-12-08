@@ -24,7 +24,7 @@
     "backbone.marionette": "~1.6.4",
     "hbsfy": "~2.2.1",
     "handlebars": "~3.0.0",
-    "moment": "~2.9.0",
+    "moment": "~2.24.0",
     "bootstrap": "~3.3.2",
     "nprogress": "~0.1.6",
     "bbcode": "~0.1.5",
